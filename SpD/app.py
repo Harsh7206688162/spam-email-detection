@@ -5,8 +5,13 @@ import re
 # =====================
 # Load Model + Vectorizer
 # =====================
-model = pickle.load(open("spam_model.pkl", "rb"))
-vectorizer = pickle.load(open("vectorizer.pkl", "rb"))
+import os
+import pickle
+
+BASE_DIR = os.path.dirname(__file__)
+
+model = pickle.load(open(os.path.join(BASE_DIR, "spam_model.pkl"), "rb"))
+vectorizer = pickle.load(open(os.path.join(BASE_DIR, "vectorizer.pkl"), "rb"))
 
 # =====================
 # Text Cleaning Function
